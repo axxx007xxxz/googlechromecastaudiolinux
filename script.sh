@@ -10,7 +10,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-echo "$(tput bold)Installing pulseaudio-dlna$(tput sgr0)"
 if [[ "$1" = "-h" || "$1" = "--help" ]]
 		then
 			echo "Options list:"
@@ -19,11 +18,13 @@ if [[ "$1" = "-h" || "$1" = "--help" ]]
 			exit
 	elif [[ -z "$1" || "$1" = "-q" || "$1" = "--quiet" ]]
 		then
+            echo "$(tput bold)Installing pulseaudio-dlna$(tput sgr0)"
 			sudo add-apt-repository -y ppa:qos/pulseaudio-dlna > /dev/null
 			sudo apt-get -y update > /dev/null
 			sudo apt-get install -y pulseaudio-dlna > /dev/null
 	elif [[ "$1" = "-v" || "$1" = "--verbose" ]]
 		then
+            echo "$(tput bold)Installing pulseaudio-dlna$(tput sgr0)"
 			sudo add-apt-repository -y ppa:qos/pulseaudio-dlna
 			sudo apt-get -y update
 			sudo apt-get install -y pulseaudio-dlna
